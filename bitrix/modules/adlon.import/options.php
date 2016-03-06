@@ -16,7 +16,7 @@ $module_id = 'adlon.import';
                         
 		}
 	}
-
+        
  ?>       
 
 <form method="POST" action="<?echo $APPLICATION->GetCurPage()?>?lang=<?echo LANGUAGE_ID?>&mid=<?=$module_id?>" ENCTYPE="multipart/form-data" name="dataload">
@@ -40,37 +40,37 @@ $module_id = 'adlon.import';
         <tr>
 		<td width="50%">Каталог товыров (ID)</td>
 		<td width="50%">
-			<input type="text" name="SETTINGS[idIblokCatalog]" value="10">
+                    <input type="text" name="SETTINGS[idIblokCatalog]" value="<? echo COption::GetOptionString('adlon.import', 'idIblokCatalog');?>" >
 		</td>
 	</tr>
         <tr>
 		<td width="50%">Торговые предложения (ID)</td>
 		<td width="50%">
-			<input type="text" name="SETTINGS[idIblokPredlog]" value="11">
+			<input type="text" name="SETTINGS[idIblokPredlog]" value="<? echo COption::GetOptionString('adlon.import', 'idIblokPredlog'); ?>">
 		</td>
 	</tr>
         <tr>
 		<td width="50%">Импорт Каталог (ID)</td>
 		<td width="50%">
-			<input type="text" name="SETTINGS[idIblokCatalogImp]" value="22">
+			<input type="text" name="SETTINGS[idIblokCatalogImp]" value="<? echo COption::GetOptionString('adlon.import', 'idIblokCatalogImp'); ?>">
 		</td>
 	</tr>
                 <tr>
 		<td width="50%">Импорт Торговые предложения (ID)</td>
 		<td width="50%">
-			<input type="text" name="SETTINGS[idIblokPredlogImp]" value="23">
+			<input type="text" name="SETTINGS[idIblokPredlogImp]" value="<? echo COption::GetOptionString('adlon.import', 'idIblokPredlogImp'); ?>">
 		</td>
 	</tr>
                 <tr>
 		<td width="50%">Свойтво по которому связываем каталоги(ID) </td>
 		<td width="50%">
-			<input type="text" name="SETTINGS[nomPropertyCatalog]" value="464">
+			<input type="text" name="SETTINGS[nomPropertyCatalog]" value="<? echo  COption::GetOptionString('adlon.import', 'nomPropertyCatalog');?>">
 		</td>
 	</tr>
                 <tr>
 		<td width="50%">Свойтво по которому связываем торговые предложения (ID)</td>
 		<td width="50%">
-			<input type="text" name="SETTINGS[nomPropertyPredlog]" value="543">
+			<input type="text" name="SETTINGS[nomPropertyPredlog]" value="<? echo COption::GetOptionString('adlon.import', 'nomPropertyPredlog');?>">
 		</td>
 	</tr>
         <?php

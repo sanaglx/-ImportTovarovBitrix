@@ -6,11 +6,17 @@ require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/modules/main/include/prolog_admin_a
 global $DB;
 $db_type = strtolower($DB->type);
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/modules/adlon.import/fat.php");
-$SETTINGS = COption::GetOptionString("adlon.import", "SETTINGS");
-echo"<pre>---";print_r($SETTINGS);
-echo '</pre>';
-//-------------------------------------------
-//НАСТРОЙКА ЗДЕСЬ
+//-------------------------------------------------------------------------
+//НАСТРОЙКИ ИСПОЛЬЗУЕМЫЕ С МОДУЛЯ
+$idIblokCatalog = COption::GetOptionString('adlon.import', 'idIblokCatalog');
+$idIblokPredlog = COption::GetOptionString('adlon.import', 'idIblokPredlog');
+$idIblokCatalogImp = COption::GetOptionString('adlon.import', 'idIblokCatalogImp');
+$idIblokPredlogImp = COption::GetOptionString('adlon.import', 'idIblokPredlogImp');
+$nomPropertyCatalog = COption::GetOptionString('adlon.import', 'nomPropertyCatalog');
+$nomPropertyPredlog = COption::GetOptionString('adlon.import', 'nomPropertyPredlog');
+
+//--------------------------------------------------------------------------
+//НАСТРОЙКА ЗДЕСЬ для перехода на настройки модуля закоментируйте местные настройки
 $idIblokCatalog = 10;       // Каталог
 $idIblokPredlog = 11 ;      // Торговые предложения
 $idIblokCatalogImp = 22;    // Импорт Каталог

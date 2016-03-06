@@ -1,4 +1,4 @@
-<?
+<?php
 
 IncludeModuleLangFile(__FILE__);
 $APPLICATION->SetAdditionalCSS("/bitrix/panel/main/adlon.css");
@@ -9,8 +9,8 @@ if($APPLICATION->GetGroupRight("mcart.xls")!="D"){
         "section" => "adlon.import",
         "sort" => 800,
 		"icon" => "adlon_menu_icon",
-        "text" =>  GetMessage("ADLON_EXCEL"),
-        "title" =>  GetMessage("ADLON_EXCEL_IMPORT"),
+        "text" => "Импорт 1С",
+        "title" =>  "Импорт 1С",
         "url"  => "adlon_start.php?lang=".LANGUAGE_ID,
         
         "items_id" => "menu_mcart_xls",
