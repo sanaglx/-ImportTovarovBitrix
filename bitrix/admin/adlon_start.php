@@ -6,6 +6,9 @@ require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/modules/main/include/prolog_admin_a
 global $DB;
 $db_type = strtolower($DB->type);
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/modules/adlon.import/fat.php");
+$SETTINGS = COption::GetOptionString("adlon.import", "SETTINGS");
+echo"<pre>---";print_r($SETTINGS);
+echo '</pre>';
 //-------------------------------------------
 //НАСТРОЙКА ЗДЕСЬ
 $idIblokCatalog = 10;       // Каталог

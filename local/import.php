@@ -227,6 +227,7 @@ function test4($id10 = 10, $id22 = 22, $prop = 0) {
 }
 
 //////////////////
+// TODO Необходима доработка готовность 50%  
 perebor_Tovarxx(0, 22, 10, 464, 11, 543);
 
 function perebor_Tovarxx($ostatok = 0, $id_blok = 22, $id_blok1 = 10, $prop = 464, $id_blok2 = 11, $prop2 = 543) {
