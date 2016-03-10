@@ -55,7 +55,7 @@ return mail($to,$subject,$body,$headers);
 CModule::AddAutoloadClasses(
     '',
     array(
-		'ImportTovarov' => '/bitrix/php_interface/develop/ib_to_txt.php',
+		//'ImportTovarov' => '/bitrix/php_interface/develop/ib_to_txt.php',
     )
 );
 

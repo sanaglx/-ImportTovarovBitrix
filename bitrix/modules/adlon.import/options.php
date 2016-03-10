@@ -38,7 +38,7 @@ $module_id = 'adlon.import';
         <tr><td colspan="2">ПАРАМЕТРЫ</td> </tr>
  
         <tr>
-		<td width="50%">Каталог товыров (ID)</td>
+		<td width="50%">Каталог товаров (ID)</td>
 		<td width="50%">
                     <input type="text" name="SETTINGS[idIblokCatalog]" value="<? echo COption::GetOptionString('adlon.import', 'idIblokCatalog');?>" >
 		</td>

@@ -4,6 +4,7 @@
      include(GetLangFileName($strPath2Lang."/lang/", "/install/index.php")); 
      include($strPath2Lang."/install/version.php");
      
+     
 Class adlon_import extends CModule
 {
 	var $MODULE_ID = "adlon.import";

@@ -6,6 +6,7 @@ require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/modules/main/include/prolog_admin_a
 global $DB;
 $db_type = strtolower($DB->type);
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/modules/adlon.import/fat.php");
+require_once ($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/adlon.import/classes/general/ib_to_imp.php");
 //-------------------------------------------------------------------------
 //НАСТРОЙКИ ИСПОЛЬЗУЕМЫЕ С МОДУЛЯ
 $idIblokCatalog = COption::GetOptionString('adlon.import', 'idIblokCatalog');
@@ -141,112 +142,7 @@ font.text{
 
 
 </style>
-<script>
-    function confirmYes(aac)
-    {
 
-        if (confirm("Вы подтверждаете оплату?")) {
-            console.log(aac);
-            oPlata(aac);
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    $(document).ready(function () {
-        $(".razbloc").click(rAzblok);
-        $(".zabloc").click(zAbloc);
-        $("#close_okno").click(function () {
-            $("#okno_z").hide();
-        });
-
-
-
-        /*$(".oplata7").click(oPlata);*/
-        $(".oknoz").click(oKnox);
-
-    })
-
-    function oKnox()
-    {
-        var theClass = $(this).attr('id');
-        if (!theClass) {
-            var theClass = $('.oknoz').attr('id');
-            console.log($('.oknoz').attr('id'));
-        }
-        $("#idz").val(theClass);
-        $(".okno_z1").show("slow");
-
-
-    }
-
-    function rAzblok()
-    {
-        var theClass = $(this).attr('id');
-        /*var theClass = $('#razbloc').attr('class');*/
-        $.ajax({
-            url: "/ajax.handler.php",
-            type: "POST",
-            dataType: "html",
-            data: "PAGE=RAZBLOK&ID=" + theClass,
-            success: function (data) {
-                $('#rezult').html(data)
-            }
-        });
-
-    }
-
-
-
-    function oPlata(theClass)
-    {
-        /*var theClass = $(this).attr('id');*/
-        /*console.log($(this).attr('id'));*/
-        $.ajax({
-            url: "/ajax.handler.php",
-            type: "POST",
-            dataType: "html",
-            data: "PAGE=OPLATA&ID=" + theClass,
-            success: function (data) {
-                $('#rezult').html(data)
-            }
-        });
-    }
-
-    function zAbloc()
-    {
-        var theClass = $(this).attr('id');
-        $.ajax({
-            url: "/ajax.handler.php",
-            type: "POST",
-            dataType: "html",
-            data: "PAGE=ZABLOK&ID=" + theClass,
-            success: function (data) {
-                $('#rezult').html(data)
-            }
-        });
-    }
-
-    function call()
-    {
-        var msg = $('#formx').serialize();
-        $.ajax({
-            type: 'POST',
-            url: '/ajax.handler.php',
-            data: "PAGE=ZABLOK&" + msg,
-            success: function (data) {
-                $('#rezult').html(data);
-            },
-            error: function (xhr, str) {
-                alert('Возникла ошибка: ' + xhr.responseCode);
-            }
-        });
-
-    }
-
-
-</script>
 <div class= "adon_1" style = "">
    <div style="float:left; margin:3px;">
    <a id="filtrn" class='adm-btn' href='/bitrix/admin/adlon_start.php?lang=ru&pr=1'>Показать ВСЕ мои товары</a>
