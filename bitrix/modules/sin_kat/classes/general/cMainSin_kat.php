@@ -23,11 +23,11 @@ class cMainSin_kat {
      * @param type $i_blok
      * @param type $codep
      */
-    function addProp($name="ID.постащика",$i_blok=10,$codep="id_post") {
+    function addProp($name="ID_постащика",$i_blok=10,$codep="id_post") {
       $arFields = Array(
         "NAME" => $name,
         "ACTIVE" => "Y",
-        "SORT" => "600",
+        "SORT" => "5",
         "CODE" =>$codep ,
         "PROPERTY_TYPE" => "S",
         "IBLOCK_ID" => $i_blok,
@@ -35,6 +35,7 @@ class cMainSin_kat {
       
       $ibp = new CIBlockProperty;
       $PropID = $ibp->Add($arFields);
+      return $PropID;
     }
     
     /**
@@ -44,9 +45,8 @@ class cMainSin_kat {
      */
     function delProp($codep="id_post",$i_blok=10) {
        $res = CIBlockProperty::GetByID($codep, $i_blok, FALSE);
-        if($ar_res = $res->GetNext())
-        CIBlockProperty::Delete(
-            $ar_res['ID']
-        );
+        if($ar_res = $res->GetNext()){
+        CIBlockProperty::Delete($ar_res['ID']);
+        }
     }
 }
